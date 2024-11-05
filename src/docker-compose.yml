@@ -1,0 +1,20 @@
+﻿version: "3.4"
+
+services:
+  ipretty:
+    container_name: ipretty
+    image: iprettyapi
+    environment:
+      - PORT=500  
+    build:
+      context: .
+      dockerfile: Ipretty.Api/Dockerfile
+
+  ipretty-consumer:
+    container_name: ipretty-consumer
+    image: iprettyconsumer
+    environment:
+      - PORT=500  
+    build:
+      context: .
+      dockerfile: Dockerfile
